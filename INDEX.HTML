@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clothing</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+    }
+
+    /* Header Styles */
+    header {
+        background: #d39dff;
+        color: #000;
+        padding: 20px 0;
+    }
+
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-profile {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-profile img {
+        width: 50px;
+        height: auto;
+        margin-right: 20px;
+    }
+
+    header nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    header nav ul li {
+        margin-left: 40px;
+    }
+
+    header nav ul li a {
+        color: #000;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    header nav ul li a:active {
+        color: #fff;
+        transform: scale(0.95);
+    }
+
+    /* Profile Section */
+    #profile-section {
+        display: flex;
+        justify-content: center;
+        padding: 50px;
+        background-color: #f3b9e1;
+    }
+
+    #profile-section img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 4px solid #d39dff;
+        margin-right: 30px;
+    }
+
+    #profile-section .profile-description {
+        max-width: 600px;
+        font-size: 18px;
+        color: #333;
+    }
+
+    /* Image Cards Section */
+    #image-cards-section {
+        background-color: #f3b9e1;
+        padding: 50px 20px;
+    }
+
+    #image-cards-section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2rem;
+        color: #333;
+    }
+
+    .image-cards-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .image-card {
+        width: 32%;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s;
+        margin-bottom: 20px;
+    }
+
+    .image-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .image-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* Projects Section */
+    #projects {
+        background: #f3b9e1;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    #projects h2 {
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .projects-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-top: 50px;
+    }
+
+    .project-card {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 900px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        margin-right: 20px;
+        border-radius: 5px;
+    }
+
+    .project-info {
+        text-align: left;
+    }
+
+    .project-info h3 {
+        font-size: 1.6em;
+        color: #333;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .project-info p {
+        font-size: 1.1em;
+        color: #666;
+        margin-top: 10px;
+    }
+
+    /* Footer Section */
+    footer {
+        background-color: #d39dff;
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    footer .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    footer .social-icons a {
+        color: white;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+
+    footer .social-icons a:hover {
+        text-decoration: underline;
+    }
+
+    footer .phone {
+        display: block;
+        margin-top: 5px;
+        font-size: 1rem;
+    }
+
+    footer .footer-content {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+    }
+
+    footer .footer-content div {
+        flex: 1;
+        max-width: 200px;
+    }
+
+    footer .footer-content div h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    /* Responsive Styles for Mobile Devices */
+    @media (max-width: 768px) {
+        header .container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        header nav ul {
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        header nav ul li {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+
+        #profile-section {
+            flex-direction: column;
+            padding: 30px;
+        }
+
+        #profile-section img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        .image-card {
+            width: 48%; /* Adjust cards to fit two per row */
+            margin-bottom: 15px;
+        }
+
+        .projects-cards {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .project-card {
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 15px;
+        }
+
+        footer .footer-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        footer .footer-content div {
+            max-width: 100%;
+        }
+    }
+
+    /* Responsive Styles for Tablet Devices */
+    @media (max-width: 1024px) and (min-width: 769px) {
+        header .container {
+            flex-direction: row;
+        }
+
+        .image-card {
+            width: 48%;
+        }
+
+        .projects-cards {
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .project-card {
+            width: 48%;
+        }
+
+        footer .footer-content {
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        footer .footer-content div {
+            max-width: 200px;
+        }
+    }
+</style>
+<style>
+    /* Other existing styles remain the same... */
+    
+    /* Image Cards Section */
+    #image-cards-section {
+        background-color: #f3b9e1;
+        padding: 50px 20px;
+    }
+
+    #image-cards-section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2rem;
+        color: #333;
+    }
+
+    .image-cards-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .image-card {
+        width: 32%; /* Default card width for larger screens */
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s;
+        margin-bottom: 20px;
+    }
+
+    .image-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .image-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* Responsive Styles for Mobile Devices */
+    @media (max-width: 768px) {
+        /* Adjusting the layout of the image cards for mobile view */
+        .image-cards-container {
+            flex-direction: column; /* Stack cards vertically on mobile */
+            align-items: center; /* Center the cards */
+            gap: 20px; /* Add more space between cards */
+        }
+
+        .image-card {
+            width: 80%; /* Make each card take up more width on mobile */
+        }
+
+        /* Rest of the mobile styles remain unchanged... */
+    }
+
+    /* Responsive Styles for Tablet Devices */
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .image-card {
+            width: 48%; /* Cards will be 2 per row on tablets */
+        }
+
+        .projects-cards {
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .project-card {
+            width: 48%;
+        }
+        
+        /* Rest of the tablet styles remain unchanged... */
+    }
+</style>
+
+   
+</head>
+<body>
+      <!-- Header Section -->
+      <header>
+        <div class="container">
+            <!-- Logo Section -->
+            <div class="logo-profile">
+                <img src="IMAGE/4.jpg" alt="logo">
+            </div>
+
+            <!-- Navigation Section -->
+            <nav>
+                <ul>
+                    <!-- Links to the About, Projects, and Contacts sections -->
+                    <li><a href="#profile-section">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact-footer">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   
+
+
+    <!-- Profile Section -->
+    <section id="profile-section">
+        <img src="IMAGE/5.jpg" alt="Profile Image">
+        <div class="profile-description">
+            <h2>About Us</h2>
+           <p>Julius Diongzon</p>
+           <p>BSIT 2-A</p>
+           <p>ACTIVITY 13: Mid Fidelity Prototype for a Small Business Website</p>
+           
+        </div>
+    </section>
+    <section id="image-cards-section">
+       <h2>Sample T-Shirt</h2>
+        <div class="image-cards-container">
+            
+            <div class="image-card">
+                <img src="IMAGE/6.jpg" alt="Instagram Logo">
+            </div>
+            <div class="image-card">
+                <img src="IMAGE/7.jpg" alt="Image 2">
+            </div>
+            <div class="image-card">
+                <img src="IMAGE/8.jpg" alt="Image 3">
+            </div>
+        </div>
+    </section>
+    
+    
+   <!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-cards">
+            <div class="project-card">
+                <img src="IMAGE/6.jpg" alt="Business website">
+                <div class="project-info">
+                    <h3>Premium Cotton T-Shirt</h3>
+                    <H4>This best-selling T-shirt from [Brand Name] combines comfort and style with its soft, breathable 100% cotton fabric. Perfect for everyday wear, this versatile piece comes in a variety of colors.</H4>
+                    <h4>and fits effortlessly into any casual outfit. Whether you're lounging at home or out with friends, this T-shirt offers a relaxed and stylish look.</h4>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="IMAGE/7.jpg" alt="Personal Website">
+                <div class="project-info">
+                    <h3>Classic Denim Jeans</h3>
+                    <H4>Crafted from durable, high-quality denim, these [Brand Name] jeans are a wardrobe essential. Known for their flattering fit and timeless design, they’re made to last and perfect for any casual outing. The stretch fabric provides all-day comfort, while the classic wash offers versatility to pair with any top..</H4>
+                </div>
+            </div>
+            <!-- Move the third card inside here -->
+            <div class="project-card">
+                <img src="IMAGE/8.jpg" alt="Personal Website">
+                <div class="project-info">
+                    <h3>Eco-Friendly T-Shirt</h3>
+                    <H4>Stay cozy and sustainable with [Brand Name]'s eco-friendly hoodie. Made from a blend of recycled materials and organic cotton, this hoodie combines comfort and environmental responsibility.</H4>
+                    <h4>With its modern design and soft feel, it's perfect for cooler days and casual hangouts, all while making a positive impact on the planet.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- Footer Section -->
+<footer id="contact-footer" style="background-color: #d39dff;"> <!-- Example new color -->
+    <div class="social-icons">
+        <!-- Instagram Link -->
+        <a href="https://instagram.com" target="_blank">
+            <img src="IMAGE/1.jpg" alt="Instagram Logo" width="25px">
+        </a>
+        
+        <!-- Facebook Link -->
+        <a href="https://facebook.com" target="_blank">
+            <img src="IMAGE/2.png" alt="Facebook Logo" width="25px">
+        </a>
+        
+        <!-- Phone Number Link -->
+        <a href="tel:+1234567890">
+            <img src="IMAGE/3.jpg" alt="Phone Logo" width="25px">
+        </a>
+    </div>
+    <div class="phone">
+        <a href="tel:+1234567890">Call Us: 09704025052</a>
+    </div>
+</footer>
+
+</body>
+</html>
